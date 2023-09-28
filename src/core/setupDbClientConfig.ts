@@ -15,15 +15,15 @@
 // }
 
 export function setupDbClientConfig() {
-  const databaseUrl = process.env.USE_DEV_DB
-    ? process.env.DEV_DATABASE_URL
-    : process.env.DATABASE_URL;
-  console.log("databaseUrl", databaseUrl);
-  const config = {
-    connectionString: databaseUrl,
-    ssl: {
-      rejectUnauthorized: true,
-    },
-  };
-  return config;
+    const databaseUrl = process.env.USE_DEV_DB
+        ? process.env.DEV_DATABASE_URL
+        : process.env.DATABASE_URL;
+    console.log("databaseUrl", databaseUrl);
+    const config = {
+        connectionString: databaseUrl,
+        ssl: {
+            rejectUnauthorized: true,
+        },
+    };
+    return config;
 }

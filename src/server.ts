@@ -16,13 +16,13 @@ app.use("/", homeRouter);
 connectToDbAndStartListening();
 
 async function connectToDbAndStartListening() {
-  console.log("Connecting to database...");
-  await database.connect();
-  console.log("Connected to database");
+    console.log("Connecting to database...");
+    await database.connect();
+    console.log("Connected to database");
 
-  console.log("Starting express server...");
-  const port = process.env.PORT || 4000;
-  app.listen(port, () => {
-    console.log(`Express server listening on port ${port}`);
-  });
+    console.log("Starting express server...");
+    const port = process.env.PORT || 4000;
+    app.listen(port, () => {
+        console.log(`Express server listening on port ${port}`);
+    });
 }
