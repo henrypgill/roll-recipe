@@ -1,0 +1,25 @@
+name: CI
+
+on:
+  push:
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Install modules
+        run: bun
+      - name: Check formatting with Prettier
+        run: bun format:check
+      - name: Check quality with ESLint
+        run: bun lint
+      - name: Check types compile
+        run: bun type-check
+      - name: Check tests pass
+        run: bun test
+      - name: Check app builds
+        run: bun bake
